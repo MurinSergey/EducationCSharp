@@ -26,3 +26,4 @@ C:\Users\murin\Documents\CodeProjects\EducationCSharp\Module_01\obj\Debug\net8.0
 C:\Users\murin\Documents\CodeProjects\EducationCSharp\Module_01\obj\Debug\net8.0\Module_01.pdb
 C:\Users\murin\Documents\CodeProjects\EducationCSharp\Module_01\obj\Debug\net8.0\Module_01.genruntimeconfig.cache
 C:\Users\murin\Documents\CodeProjects\EducationCSharp\Module_01\obj\Debug\net8.0\ref\Module_01.dll
+C:\Users\murin\Documents\CodeProjects\EducationCSharp\Module_01\obj\Debug\net8.0\Module_01.sourcelink.json
