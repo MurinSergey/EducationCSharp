@@ -11,7 +11,7 @@ namespace Module_03.Quest_323
         public static void Run()
         {
             Console.WriteLine();
-            Console.WriteLine("===Запускается задние 3.2.3===");
+            Console.WriteLine("===Запускается задание 3.2.3===");
             // Создаем первую переменную
             string myName;
             // Запишим в переменную первое значение
