@@ -11,7 +11,10 @@ namespace Module_03.Quest_332
     {
         public static void Run()
         {
-            const string USER_NAME = "Sergey";
+            Console.WriteLine();
+            Console.WriteLine("===Запускается задание 3.3.2===");
+
+            const string USER_NAME = "Сергей";
             byte age = 35;
             bool havePet = false;
             float shoeSize = 32;
