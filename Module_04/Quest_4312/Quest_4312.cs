@@ -20,7 +20,7 @@ namespace Module_04.Quest_4312
                 {
                     if (arr[i] > arr[j])
                     {
-                        (arr[i], arr[j]) = (arr[j], arr[i]);
+                        (arr[i], arr[j]) = (arr[j], arr[i]); //кортеж
                     }
                 } 
             }
