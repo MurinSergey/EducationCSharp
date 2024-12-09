@@ -31,6 +31,7 @@ namespace Module_04.Quest_Final
 
             Console.Write("<<<Введите ваш логин: ");
             User.Login = Console.ReadLine();
+            User.LoginLength = User.Login.Length;
 
             Console.ReadKey();
         }
