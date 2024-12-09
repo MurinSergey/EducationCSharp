@@ -17,7 +17,7 @@ namespace Module_04.Quest_Final
                 string LastName, 
                 string Login, 
                 int LoginLength, 
-                bool HavePet, 
+                bool HasPet, 
                 double Age, 
                 string[] Color) User;
 
@@ -32,6 +32,9 @@ namespace Module_04.Quest_Final
             Console.Write("<<<Введите ваш логин: ");
             User.Login = Console.ReadLine();
             User.LoginLength = User.Login.Length;
+
+            Console.Write("<<<Есть ли у вас животные? Да или Нет: ");
+            User.HasPet = Console.ReadLine() == "Да" ? true : false;
 
             Console.ReadKey();
         }
