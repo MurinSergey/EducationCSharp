@@ -36,6 +36,16 @@ namespace Module_04.Quest_Final
             Console.Write("<<<Есть ли у вас животные? Да или Нет: ");
             User.HasPet = Console.ReadLine() == "Да" ? true : false;
 
+            Console.Write("<<<Введите ваш возраст: ");
+            User.Age = checked(double.Parse(Console.ReadLine()));
+
+            Console.WriteLine(">>>Введите три ваших любимых цвета: ");
+            for (int i = 0; i < User.Color.GetUpperBound(0) + 1; i++) {
+                Console.Write("<<< ");
+                User.Color[i] = Console.ReadLine();
+            }
+
+
             Console.ReadKey();
         }
     }
