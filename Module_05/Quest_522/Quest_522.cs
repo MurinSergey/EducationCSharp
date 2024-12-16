@@ -8,9 +8,9 @@ namespace Module_05.Quest_522
 {
     internal class Quest_522
     {
-        static string ShowColor(string name)
+        static string ShowColor(string user_name)
         {
-            Console.WriteLine("Напишите свой любимый цвет на английском с маленькой буквы");
+            Console.WriteLine($"{user_name}, напишите свой любимый цвет на английском с маленькой буквы");
             var color = Console.ReadLine();
             switch (color)
             {
