@@ -2,11 +2,11 @@
 {
     internal class Program
     {
-        static void ShowColor()
+        static string ShowColor()
         {
             Console.WriteLine("Напишите свой любимый цвет на английском с маленькой буквы");
-
-            switch (Console.ReadLine())
+            var color = Console.ReadLine();
+            switch (color)
             {
                 case "red":
                     Console.BackgroundColor = ConsoleColor.Red;
@@ -33,12 +33,21 @@
                     Console.WriteLine("Your color is default!");
                     break;
             }
-        }
 
+            return color;
+        }
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            var favcolor = new string[3];
+            for (int i = 0; i < 3; i++) {
+                favcolor[i] = ShowColor();
+            }
+
+            Console.WriteLine("Ваши любимые цвета");
+            foreach (var fav in favcolor) { 
+                Console.WriteLine(fav); 
+            }
         }
     }
 }
