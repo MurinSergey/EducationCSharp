@@ -33,7 +33,7 @@ namespace Module_05.Quest_5214
             Console.WriteLine();
             Console.WriteLine("===Запускается задание 5.2.14===");
 
-            var array = GetArrayFromConsole();
+            var array = GetArrayFromConsole(3);
             var sortedarray = SortArray(array); //Сортированный массив
             foreach (var item in array) { Console.WriteLine(item); }
         }
