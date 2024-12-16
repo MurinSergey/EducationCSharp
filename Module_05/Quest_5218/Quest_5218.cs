@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Module_05.Quest_5218
 {
@@ -43,8 +42,8 @@ namespace Module_05.Quest_5218
             Console.WriteLine();
             Console.WriteLine("===Запускается задание 5.2.14===");
 
-            var array = GetArrayFromConsole(3);
-            ShowArray(array);
+            var array = GetArrayFromConsole(10);
+            ShowArray(array, true);
         }
     }
 }
