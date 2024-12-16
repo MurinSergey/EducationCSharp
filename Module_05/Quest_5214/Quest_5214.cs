@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Module_05.Quest_528
+namespace Module_05.Quest_5214
 {
-    internal class Quest_528
+    internal class Quest_5214
     {
-        static int[] GetArrayFromConsole()
+        static int[] GetArrayFromConsole(int num = 5) //необязательный параметр
         {
-            var result = new int[5];
+            var result = new int[num];
 
             for (int i = 0; i < result.Length; i++)
             {
@@ -31,10 +31,10 @@ namespace Module_05.Quest_528
         public static void Run()
         {
             Console.WriteLine();
-            Console.WriteLine("===Запускается задание 5.2.8===");
+            Console.WriteLine("===Запускается задание 5.2.14===");
 
             var array = GetArrayFromConsole();
-            array = SortArray(array);
+            var sortedarray = SortArray(array); //Сортированный массив
             foreach (var item in array) { Console.WriteLine(item); }
         }
     }
