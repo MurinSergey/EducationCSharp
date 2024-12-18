@@ -40,7 +40,7 @@ namespace Module_05.Quest_5218
         public static void Run()
         {
             Console.WriteLine();
-            Console.WriteLine("===Запускается задание 5.2.14===");
+            Console.WriteLine("===Запускается задание 5.2.18===");
 
             var array = GetArrayFromConsole(10);
             ShowArray(array, true);
