@@ -8,7 +8,7 @@ namespace Module_05.Quest_531
 {
     internal class Quest_531
     {
-        static void ChangeAge(int age)
+        static void ChangeAge(ref int age)
         {
             age += 1;
         }
@@ -20,7 +20,7 @@ namespace Module_05.Quest_531
 
             Console.Write("<<<Введите ваш возраст:");
             var age = int.Parse(Console.ReadLine());
-            ChangeAge(age);
+            ChangeAge(ref age);
             Console.WriteLine(age);
         }
     }
