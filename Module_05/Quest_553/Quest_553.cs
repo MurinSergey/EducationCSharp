@@ -13,6 +13,7 @@ namespace Module_05.Quest_553
             if (deep > 1 && saidword.Length > 2) 
             {
                 saidword = saidword.Substring(2);
+                Console.BackgroundColor = (ConsoleColor)deep;
                 Console.WriteLine($"...{saidword}");
                 Echo(saidword, --deep);
             }
