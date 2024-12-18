@@ -8,7 +8,7 @@ namespace Module_05.Quest_555
 {
     internal class Quest_555
     {
-        static int Factorial(int x)
+        static decimal Factorial(int x)
         {
             if (x == 0)
             {
