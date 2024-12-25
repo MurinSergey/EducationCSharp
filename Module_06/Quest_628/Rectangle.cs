@@ -22,4 +22,7 @@ public class Rectangle
         this.a = a;
         this.b = a;
     }
+    public int Square(){
+        return a * b;
+    }
 }
