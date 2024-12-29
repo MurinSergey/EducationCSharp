@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloUbuntu", "HelloUbuntu\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module_06", "Module_06\Module_06.csproj", "{C69F4C8A-9690-4069-A2DB-0FD286B0F4CC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module_07", "Module_07\Module_07.csproj", "{FE9BBFEE-F4A2-474D-87E6-F96F06E200F1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{C69F4C8A-9690-4069-A2DB-0FD286B0F4CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C69F4C8A-9690-4069-A2DB-0FD286B0F4CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C69F4C8A-9690-4069-A2DB-0FD286B0F4CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE9BBFEE-F4A2-474D-87E6-F96F06E200F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE9BBFEE-F4A2-474D-87E6-F96F06E200F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE9BBFEE-F4A2-474D-87E6-F96F06E200F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE9BBFEE-F4A2-474D-87E6-F96F06E200F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
