@@ -19,7 +19,7 @@ public class Quest_727
     }
     private class C : A { 
         public override void Display(){
-            Console.WriteLine($"Class {this.GetType().Name}"); //Тут просто проверка
+            Console.WriteLine("Class C"); //Тут просто проверка
         }
     }
     private class D : B { 
@@ -37,6 +37,13 @@ public class Quest_727
     {
         Console.WriteLine();
         Console.WriteLine("===Запускается задание 7.2.7===");
-        
+
+        D d = new();
+        E e = new();
+
+        d.Display();
+        ((A)e).Display();
+        ((B)d).Display();
+        ((A)d).Display();
     }
 }
