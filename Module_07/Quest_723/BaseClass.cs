@@ -8,4 +8,6 @@ public class BaseClass
     public virtual void Display(){
         Console.WriteLine("Метод класса BaseClass");
     }
+
+    public virtual int Counter{ get; set; }
 }

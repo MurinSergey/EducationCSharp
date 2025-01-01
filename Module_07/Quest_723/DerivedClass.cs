@@ -8,4 +8,15 @@ public class DerivedClass : BaseClass
     {
         Console.WriteLine("Метод класса DerivedClass");
     }
+
+    private int counter;
+    public override int Counter
+    {
+        get => counter;
+        set {
+            if (value > 0){
+                counter = value;
+            }
+        }
+    }
 }
