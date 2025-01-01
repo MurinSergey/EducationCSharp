@@ -6,6 +6,7 @@ public class DerivedClass : BaseClass
 {
     public override void Display()
     {
+        base.Display();
         Console.WriteLine("Метод класса DerivedClass");
     }
 

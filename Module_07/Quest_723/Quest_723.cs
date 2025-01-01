@@ -12,8 +12,8 @@ public class Quest_723
         BaseClass baseClass= new();
         DerivedClass derivedClass = new();
 
-        baseClass.Display();
+        //baseClass.Display();
         derivedClass.Display();
-        ((BaseClass)derivedClass).Display();
+        //((BaseClass)derivedClass).Display();
     }
 }
