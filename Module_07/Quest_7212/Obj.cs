@@ -19,7 +19,7 @@ public class Obj
     {
         return new Obj
         {
-            Value = obj1.Value - obj2.Value;
+            Value = obj1.Value - obj2.Value
         };
     }
 }

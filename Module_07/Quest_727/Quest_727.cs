@@ -13,27 +13,34 @@ public class Quest_727
     }
     private class B : A
     {
-        public new void Display(){
+        public new void Display()
+        {
             Console.WriteLine("Class B");
         }
     }
-    private class C : A { 
-        public override void Display(){
+    private class C : A
+    {
+        public override void Display()
+        {
             Console.WriteLine("Class C"); //Тут просто проверка
         }
     }
-    private class D : B { 
-        public new void Display(){
+    private class D : B
+    {
+        public new void Display()
+        {
             Console.WriteLine("Class D");
         }
     }
-    private class E : C { 
-        public new void Display(){
+    private class E : C
+    {
+        public new void Display()
+        {
             Console.WriteLine("Class E");
         }
     }
 
-        public static void Run()
+    public static void Run()
     {
         Console.WriteLine();
         Console.WriteLine("===Запускается задание 7.2.7===");
