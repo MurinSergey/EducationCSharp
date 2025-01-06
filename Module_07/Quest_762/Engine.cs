@@ -2,7 +2,7 @@ using System;
 
 namespace Module_07.Quest_762;
 
-public class Engine
+public abstract class Engine
 {
 
 }
