@@ -10,6 +10,6 @@ public class Drive(string name, long space, long emptySpace) //Использо�
     public Dictionary<string, Folder> folders { get; } = [];
 
     public void AddFolder (string name){
-        folders.Add(name, new Folder());
+        folders.Add(name, new Folder(name));
     }
 }
