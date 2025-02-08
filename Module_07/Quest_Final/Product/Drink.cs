@@ -35,9 +35,18 @@ namespace Module_07.Quest_Final.Product
             }
         }
 
+        public Drink(Drink drink) : this(drink.Name, drink.Description, drink.Price, drink.Volume, drink.DrinkType)
+        {
+        }
+
         public override string GetInfo()
         {
-            return $"Название: {Name}, Тип напитка: {DrinkType.ToRussianString()}, Описание: {Description}, Объем: {Volume}, Цена: {Price}";
+            return $"Название: {Name}, Тип напитка: {DrinkType.ToRussianString()}, Описание: {Description}, Объем: {Volume} мл., Цена: {Price} руб.";
+        }
+
+        public override Drink Clone()
+        {
+            return new Drink(this);
         }
     }
 }

@@ -13,7 +13,7 @@ public class Order<TDelivery, TStruct> where TDelivery : Delivery.Delivery
     /// <summary>
     /// Список продуктов в заказе
     /// </summary>
-    public List<Product> Products; 
+    public List<Product.Product> Products; 
 
     public void DisplayAddress()
     {

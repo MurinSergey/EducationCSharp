@@ -36,9 +36,18 @@ namespace Module_07.Quest_Final.Product
             set { _dishType = value; }
         }
 
+        public Dish(Dish dish) : this(dish.Name, dish.Description, dish.Price, dish.Weight, dish.DishType)
+        {
+        }
+
         public override string GetInfo()
         {
-            return $"Название: {Name}, Тип блюда: {DishType.ToRussianString()}, Описание: {Description}, Вес: {Weight}, Цена: {Price}";
+            return $"Название: {Name}, Тип блюда: {DishType.ToRussianString()}, Описание: {Description}, Вес: {Weight} г., Цена: {Price} руб.";
+        }
+
+        public override Dish Clone()
+        {
+            return new Dish(this);
         }
     }
 }

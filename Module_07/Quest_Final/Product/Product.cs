@@ -65,5 +65,26 @@ public abstract class Product(string name, string description, decimal price)
     /// Описание продукта
     /// </returns>
     public abstract string GetInfo();
+
+    /// <summary>
+    /// Метод для реализации копирования продукта
+    /// </summary>
+    /// <returns>
+    /// Копия текущего продукта
+    /// </returns>
+    public abstract Product Clone();
+
+    /// <summary>
+    /// Перегрузка оператора сложения +
+    /// </summary>
+    /// <param name="left_product"></param>
+    /// <param name="right_product"></param>
+    /// <returns>
+    /// Возвращает сумму для двух переданных продукта
+    /// </returns>
+    public static decimal operator + (Product left_product, Product right_product)
+    {
+        return left_product.Price + right_product.Price;
+    }
 }
 
