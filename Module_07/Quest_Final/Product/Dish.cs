@@ -21,7 +21,8 @@ namespace Module_07.Quest_Final.Product
         public double Weight
         {
             get { return _weight; }
-            set { 
+            set
+            {
                 if (value <= 0)
                 {
                     throw new ArgumentException("Вес блюда не может быть отрицательным или равным нулю.");

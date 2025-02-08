@@ -25,7 +25,8 @@ namespace Module_07.Quest_Final.Product
         /// <exception cref="NotImplementedException"></exception>
         public static string ToRussianString(this DrinkType type)
         {
-            return type switch { 
+            return type switch
+            {
                 DrinkType.NonAlcoholic => "Не алкогольный",
                 DrinkType.Alcoholic => "Алкогольный",
                 _ => throw new NotImplementedException()

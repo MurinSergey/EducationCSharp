@@ -26,7 +26,8 @@ namespace Module_07.Quest_Final.Product
         public double Volume
         {
             get { return _volume; }
-            set { 
+            set
+            {
                 if (value <= 0)
                 {
                     throw new ArgumentException("Объем напитка не может быть отрицательным или равным нулю.");

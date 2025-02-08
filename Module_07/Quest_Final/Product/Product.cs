@@ -82,7 +82,7 @@ public abstract class Product(string name, string description, decimal price)
     /// <returns>
     /// Возвращает сумму для двух переданных продукта
     /// </returns>
-    public static decimal operator + (Product left_product, Product right_product)
+    public static decimal operator +(Product left_product, Product right_product)
     {
         return left_product.Price + right_product.Price;
     }

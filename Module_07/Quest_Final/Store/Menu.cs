@@ -23,7 +23,8 @@ namespace Module_07.Quest_Final.Store
         /// <exception cref="IndexOutOfRangeException"></exception>
         public Product.Product this[Index index]
         {
-            get {
+            get
+            {
                 int intIndex = index.GetOffset(_products.Count);
                 if (intIndex < 0 || intIndex > _products.Count - 1)
                 {
@@ -67,7 +68,7 @@ namespace Module_07.Quest_Final.Store
             }
             for (int i = 0; i < _products.Count; i++)
             {
-                Console.Write($"\t{i + 1}: ");
+                Console.Write($"\t{i + 1}. ");
                 Console.WriteLine(_products[i].GetInfo());
                 Console.WriteLine();
             }
