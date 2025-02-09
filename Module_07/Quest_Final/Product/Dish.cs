@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace Module_07.Quest_Final.Product
 {
-    public class Dish(string name, string description, decimal price, double weight, DishType dishType) : Product(name, description, price)
+    public class Dish : Product
     {
 
         /// <summary>
         /// Вес блюда
         /// </summary>
-        private double _weight = weight;
+        private double _weight;
         /// <summary>
         /// Тип блюда
         /// </summary>
-        private DishType _dishType = dishType;
+        private DishType _dishType;
 
         public double Weight
         {
@@ -35,6 +35,12 @@ namespace Module_07.Quest_Final.Product
         {
             get { return _dishType; }
             set { _dishType = value; }
+        }
+
+        public Dish(string name, string description, decimal price, double weight, DishType dishType) : base(name, description, price)
+        {
+            Weight = weight;
+            DishType = dishType;
         }
 
         public Dish(Dish dish) : this(dish.Name, dish.Description, dish.Price, dish.Weight, dish.DishType)

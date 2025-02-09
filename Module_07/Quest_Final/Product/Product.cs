@@ -2,22 +2,22 @@ using System;
 
 namespace Module_07.Quest_Final.Product;
 
-public abstract class Product(string name, string description, decimal price)
+public abstract class Product 
 {
     /// <summary>
     /// Наименование продукта
     /// </summary>
-    private string _name = name;
+    private string _name;
 
     /// <summary>
     /// Описание товара
     /// </summary>
-    private string _description = description;
+    private string _description;
 
     /// <summary>
     /// Стоимость продукта
     /// </summary>
-    private decimal _price = price;
+    private decimal _price;
 
     public string Name
     {
@@ -58,6 +58,16 @@ public abstract class Product(string name, string description, decimal price)
         }
     }
 
+    public Product (string name, string description, decimal price)
+    {
+        Name = name;
+        Description = description;
+        Price = price;
+    }
+
+    public Product(Product product) : this(product.Name, product.Description, product.Price) {
+    }
+
     /// <summary>
     /// Метод должен возвращать описание продукта
     /// </summary>
@@ -82,7 +92,7 @@ public abstract class Product(string name, string description, decimal price)
     /// <returns>
     /// Возвращает сумму для двух переданных продукта
     /// </returns>
-    public static decimal operator +(Product left_product, Product right_product)
+    public static decimal operator + (Product left_product, Product right_product)
     {
         return left_product.Price + right_product.Price;
     }

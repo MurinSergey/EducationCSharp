@@ -9,14 +9,26 @@ public static class Store
     /// </summary>
     private static Menu _storeMenu;
 
+    private static List<string> _pickPoints;
+
     public static Menu StoreMenu
     {
         get { return _storeMenu; }
     }
 
+    public static List<string> PickPoints
+    {
+        get
+        {
+            List<string> list = new(_pickPoints);
+            return list;
+        }
+    }
+
     static Store()
     {
         _storeMenu = CreateMenu();
+        _pickPoints = CreatePickPoints();
     }
     private static Menu CreateMenu()
     {
@@ -31,5 +43,16 @@ public static class Store
             new Product.Drink("Пыво", "Именно, что не пиво, а пЫво!", 50, 500, Product.DrinkType.Alcoholic)
             ]);
         return menu;
+    }
+
+    private static List<string> CreatePickPoints()
+    {
+        var pickPoints = new List<string>();
+        pickPoints.AddRange([
+                "Пункт выдачи в магазине \"Ше-ше-шестёрочка\"",
+                "Пункт выдачи в магазине \"КАРБИД\"",
+                "Пункт выдачи в магазине \"ХОРОШ'О\""
+            ]);
+        return pickPoints;
     }
 }

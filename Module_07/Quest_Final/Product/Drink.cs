@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace Module_07.Quest_Final.Product
 {
-    public class Drink(string name, string description, decimal price, double volume, DrinkType drinkType) : Product(name, description, price)
+    public class Drink : Product
     {
         /// <summary>
         /// Тип напитка
         /// </summary>
-        private DrinkType _drinkType = drinkType;
+        private DrinkType _drinkType;
         /// <summary>
         /// Объем напитка
         /// </summary>
-        private double _volume = volume;
+        private double _volume;
 
         public DrinkType DrinkType
         {
@@ -34,6 +34,12 @@ namespace Module_07.Quest_Final.Product
                 }
                 _volume = value;
             }
+        }
+
+        public Drink(string name, string description, decimal price, double volume, DrinkType drinkType) : base(name, description, price)
+        {
+            Volume = volume;
+            DrinkType = drinkType;
         }
 
         public Drink(Drink drink) : this(drink.Name, drink.Description, drink.Price, drink.Volume, drink.DrinkType)

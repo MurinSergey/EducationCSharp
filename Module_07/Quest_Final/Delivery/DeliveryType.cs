@@ -9,7 +9,7 @@ public enum DeliveryType
 {
     Home,
     PickPoint,
-    RestoranDelivery
+    ResDelivery
 }
 
 public static class DeliveryTypeMethon
@@ -20,7 +20,7 @@ public static class DeliveryTypeMethon
         {
             DeliveryType.Home => "Доставка домой",
             DeliveryType.PickPoint => "Доставка в пункт выдачи",
-            DeliveryType.RestoranDelivery => "Без доставки",
+            DeliveryType.ResDelivery => "Доставка в ресторан",
             _ => throw new NotImplementedException()
         };
     }
