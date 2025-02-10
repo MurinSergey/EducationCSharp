@@ -96,7 +96,7 @@ public abstract class Delivery
     /// <summary>
     /// Выводим всю информацию о доставке
     /// </summary>
-    protected abstract void PrintInfo();
+    public abstract void PrintInfo();
     /// <summary>
     /// Запускаем выполнение доставки
     /// </summary>

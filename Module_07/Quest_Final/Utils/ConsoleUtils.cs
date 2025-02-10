@@ -8,9 +8,9 @@ namespace Module_07.Quest_Final.Utils
 {
     public static class ConsoleUtils
     {
-        public const string outPrefix = ">>>>>>>>";
+        private const string outPrefix = ">>>>>>>>";
 
-        public const string inPrefix = "<<<<";
+        private const string inPrefix = "<<<<";
 
         public static void WriteLine(string line)
         {

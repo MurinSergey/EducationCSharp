@@ -105,7 +105,7 @@ public class ResDelivery : Delivery
             }
         }
     }
-    protected override void PrintInfo()
+    public override void PrintInfo()
     {
         Console.WriteLine();
         ConsoleUtils.WriteLine($"Тип задачи: {DeliveryType.ToRussinaString()}");

@@ -84,7 +84,7 @@ public class PickPointDelivery : Delivery
         ConsoleUtils.WriteLine($"Доставка будет выполнена: {DeliveryDateTimeString}");
         ConsoleUtils.WriteLine($"Заказ храниться {_storageInterval} дней до: {EndStorageDateTimeString}");
     }
-    protected override void PrintInfo()
+    public override void PrintInfo()
     {
         Console.WriteLine();
         ConsoleUtils.WriteLine($"Тип задачи: {DeliveryType.ToRussinaString()}");

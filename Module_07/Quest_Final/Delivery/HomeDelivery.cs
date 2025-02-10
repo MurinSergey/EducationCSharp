@@ -83,7 +83,7 @@ public class HomeDelivery : Delivery
             try
             {
                 UserName = ConsoleUtils.ReadLine("Имя получателя: ");
-                Console.WriteLine($"{ConsoleUtils.outPrefix}Спасибо, доставку получит: {UserName}");
+                ConsoleUtils.WriteLine($"Спасибо, доставку получит: {UserName}");
                 break;
             }
             catch (ArgumentException err)
@@ -92,7 +92,7 @@ public class HomeDelivery : Delivery
             }
         }
     }
-    protected override void PrintInfo()
+    public override void PrintInfo()
     {
         Console.WriteLine();
         ConsoleUtils.WriteLine($"Тип задачи: {DeliveryType.ToRussinaString()}");

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Module_07.Quest_Final.Utils;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,6 +34,19 @@ namespace Module_07.Quest_Final.Store
                 return _products[index].Clone();
             }
         }
+        /// <summary>
+        /// Метод возвращает количество продуктов в меню
+        /// </summary>
+        /// <returns>
+        /// Количество продуктов в меню
+        /// </returns>
+        public int Count
+        {
+            get
+            {
+                return _products.Count;
+            }
+        }
 
         public void AddToMenu(Product.Product product)
         {
@@ -60,17 +74,16 @@ namespace Module_07.Quest_Final.Store
         /// </returns>
         public bool PrintMenu()
         {
-            Console.WriteLine("К вашему вниманию меню нашего ресторана: ");
+            Console.WriteLine();
+            ConsoleUtils.WriteLine("К вашему вниманию меню нашего ресторана: ");
             if (_products.Count < 1)
             {
-                Console.WriteLine("К сожалению у нас ничего нет");
+                ConsoleUtils.WriteLine("К сожалению у нас ничего нет");
                 return false;
             }
             for (int i = 0; i < _products.Count; i++)
             {
-                Console.Write($"\t{i + 1}. ");
-                Console.WriteLine(_products[i].GetInfo());
-                Console.WriteLine();
+                Console.WriteLine($"\t{i + 1}. {_products[i].GetInfo()}");
             }
             return true;
         }
