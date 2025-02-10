@@ -1,4 +1,5 @@
 using System;
+using Module_07.Quest_Final.Utils;
 
 namespace Module_07.Quest_Final.Delivery;
 
@@ -8,17 +9,11 @@ public class HomeDelivery : Delivery
     /// Имя получателя
     /// </summary>
     private string _userName;
-
-    public HomeDelivery() : base(DeliveryType.Home)
-    {
-
-        SetupUserName();
-    }
-
     public string UserName
     {
         get { return _userName; }
-        set { 
+        set
+        {
             if (string.IsNullOrWhiteSpace(value))
             {
                 throw new ArgumentException("Имя получателя доставки не может быть пустым.");
@@ -26,6 +21,15 @@ public class HomeDelivery : Delivery
             _userName = value;
         }
     }
+    public HomeDelivery() : base(DeliveryType.Home)
+    {
+        SetupAddress();
+        SetupDeliveryDateTime();
+        SetupUserName();
+        //Run();
+    }
+
+
     /// <summary>
     /// Задаем адрес доставки на дом
     /// </summary>
@@ -33,16 +37,16 @@ public class HomeDelivery : Delivery
     {
         while (true)
         {
-            Console.WriteLine($"{outPrefix}Пожалуйста введите адрес доставки:");
-            Console.Write($"{inPrefix}");
+            Console.WriteLine();
+            ConsoleUtils.WriteLine("Пожалуйста введите адрес доставки:");
             try
             {
-                Address = Console.ReadLine();
-                Console.WriteLine($"{outPrefix}Спасибо, доставка по адресу: {Address}");
+                Address = ConsoleUtils.ReadLine("Адрес: ");
+                ConsoleUtils.WriteLine($"Спасибо, доставка по адресу: {Address}");
                 break;
             }
             catch (ArgumentException err) {
-                Console.WriteLine($"{outPrefix}{err.Message}");
+                ConsoleUtils.WriteLine($"{err.Message}");
             }
         }
     }
@@ -53,17 +57,17 @@ public class HomeDelivery : Delivery
     {
         while (true)
         {
-            Console.WriteLine($"{outPrefix}Пожалуйста введите желаемую дату и время доставки в формате \"dd-MM-yyyy HH-mm\":");
-            Console.Write($"{inPrefix}");
+            Console.WriteLine();
+            ConsoleUtils.WriteLine("Пожалуйста введите желаемую дату и время доставки в формате \"dd-MM-yyyy HH-mm\":");
             try
             {
-                DeliveryDateTimeString = Console.ReadLine();
-                Console.WriteLine($"{outPrefix}Спасибо, доставка на: {DeliveryDateTimeString}");
+                DeliveryDateTimeString = ConsoleUtils.ReadLine("Формат \"dd-MM-yyyy HH-mm\": ");
+                ConsoleUtils.WriteLine($"Спасибо, доставка на: {DeliveryDateTimeString}");
                 break;
             }
             catch (ArgumentException err)
             {
-                Console.WriteLine($"{outPrefix}{err.Message}");
+                ConsoleUtils.WriteLine($"{err.Message}");
             }
         }
     }
@@ -74,26 +78,26 @@ public class HomeDelivery : Delivery
     {
         while (true)
         {
-            Console.WriteLine($"{outPrefix}Пожалуйста введите имя получателя:");
-            Console.Write($"{inPrefix}");
+            Console.WriteLine();
+            ConsoleUtils.WriteLine("Пожалуйста введите имя получателя:");
             try
             {
-                UserName = Console.ReadLine();
-                Console.WriteLine($"{outPrefix}Спасибо, доставку получит: {UserName}");
+                UserName = ConsoleUtils.ReadLine("Имя получателя: ");
+                Console.WriteLine($"{ConsoleUtils.outPrefix}Спасибо, доставку получит: {UserName}");
                 break;
             }
             catch (ArgumentException err)
             {
-                Console.WriteLine($"{outPrefix}{err.Message}");
+                ConsoleUtils.WriteLine($"{err.Message}");
             }
         }
     }
-    /// <summary>
-    /// Запускаем выполнение доставки
-    /// </summary>
-    public override void Run()
+    protected override void PrintInfo()
     {
-        base.Run();
-        Console.WriteLine($"{outPrefix}Получатель: {UserName}");
+        Console.WriteLine();
+        ConsoleUtils.WriteLine($"Тип задачи: {DeliveryType.ToRussinaString()}");
+        ConsoleUtils.WriteLine($"Адрес доставки: {Address}");
+        ConsoleUtils.WriteLine($"Время доставки: {DeliveryDateTimeString}");
+        ConsoleUtils.WriteLine($"Получатель: {UserName}");
     }
 }

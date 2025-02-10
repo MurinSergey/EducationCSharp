@@ -18,8 +18,9 @@ public class Quest_Main
         Console.WriteLine();
 
         Console.WriteLine("Добро пожаловать!");
-        //HomeDelivery homeDelivery = new HomeDelivery();
-        PickPointDelivery pickPointDelivery = new PickPointDelivery(Store.Store.PickPoints);
+        HomeDelivery homeDelivery = new HomeDelivery();
+        PickPointDelivery pickPointDelivery = new PickPointDelivery(Store.Store.PickPoints, 7);
+        ResDelivery resDelivery = new ResDelivery(Store.Store.ResAddress);
 
     }
 }

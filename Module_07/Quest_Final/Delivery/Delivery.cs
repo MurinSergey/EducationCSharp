@@ -1,5 +1,6 @@
 using System;
 using System.Globalization;
+using Module_07.Quest_Final.Utils;
 
 namespace Module_07.Quest_Final.Delivery;
 
@@ -9,15 +10,10 @@ public abstract class Delivery
     /// Адресс доставки
     /// </summary>
     private string _address;
-
     /// <summary>
     /// Время доставки
     /// </summary>
     private DateTime _deliveryDateTime;
-
-    protected const string outPrefix = ">>>>>>>>";
-
-    protected const string inPrefix = "<<<<";
 
     private DeliveryType _deliveryType;
 
@@ -86,9 +82,9 @@ public abstract class Delivery
     public Delivery(DeliveryType deliveryType)
     {
         DeliveryType = deliveryType;
-        Console.WriteLine($"{outPrefix}Тип задачи: {DeliveryType.ToRussinaString()}");
+        Console.WriteLine();
+        ConsoleUtils.WriteLine($"Тип задачи: {DeliveryType.ToRussinaString()}");
     }
-
     /// <summary>
     /// Метод для задания адресса
     /// </summary>
@@ -98,13 +94,18 @@ public abstract class Delivery
     /// </summary>
     protected abstract void SetupDeliveryDateTime();
     /// <summary>
+    /// Выводим всю информацию о доставке
+    /// </summary>
+    protected abstract void PrintInfo();
+    /// <summary>
     /// Запускаем выполнение доставки
     /// </summary>
     public virtual void Run()
     {
-        Console.WriteLine($"{outPrefix}ЗАДАЧА ЗАПУЩЕНА: {DeliveryType.ToRussinaString()}");
-        Console.WriteLine($"{outPrefix}ЗАДАЧА ВЫПОЛНЕНА: {DeliveryType.ToRussinaString()}");
-        Console.WriteLine($"{outPrefix}Время доставки: {DeliveryDateTimeString}");
-        Console.WriteLine($"{outPrefix}Адрес доставки: {Address}");
+        Console.WriteLine();
+        ConsoleUtils.WriteLine("ЗАДАЧА ЗАПУЩЕНА:");
+        PrintInfo();
+        Console.WriteLine();
+        ConsoleUtils.WriteLine("ЗАДАЧА ВЫПОЛНЕНА!!!");
     }
 }

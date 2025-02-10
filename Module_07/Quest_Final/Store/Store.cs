@@ -8,14 +8,15 @@ public static class Store
     /// Меню нашего ресторана
     /// </summary>
     private static Menu _storeMenu;
-
-    private static List<string> _pickPoints;
-
     public static Menu StoreMenu
     {
         get { return _storeMenu; }
     }
 
+    /// <summary>
+    /// Список доступных пунктов выдачи
+    /// </summary>
+    private static List<string> _pickPoints;
     public static List<string> PickPoints
     {
         get
@@ -25,10 +26,24 @@ public static class Store
         }
     }
 
+    /// <summary>
+    /// Список доступных филиалов
+    /// </summary>
+    private static List<string> _resAddress;
+    public static List<string> ResAddress
+    {
+        get
+        {
+            List<string> list = new(_resAddress);
+            return list;
+        }
+    }
+
     static Store()
     {
         _storeMenu = CreateMenu();
         _pickPoints = CreatePickPoints();
+        _resAddress = CreateResAddress();
     }
     private static Menu CreateMenu()
     {
@@ -54,5 +69,16 @@ public static class Store
                 "Пункт выдачи в магазине \"ХОРОШ'О\""
             ]);
         return pickPoints;
+    }
+
+    private static List<string> CreateResAddress()
+    {
+        var resAdress = new List<string>();
+        resAdress.AddRange([
+                "ул. Пятачковская 33, ресторан \"Неправильный мёд\"",
+                "ул. Прямоугольная 9 корпус 3/4, ресторан \"Совятинка\"",
+                "ул. Громогласная 75, ресторан \"Бобовое дерево\""
+            ]);
+        return resAdress;
     }
 }
