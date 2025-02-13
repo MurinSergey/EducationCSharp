@@ -9,7 +9,9 @@ class Program
         DriveInfo[] drives = PrintDriveInfo();
         (_, _) = PrintAllSubFolderObjects(drives[0].Name);
         (_, _) = PrintAllSubFolderObjects(drives[1].Name);
-        CreateFolder(drives[1].Name, "Новая папка");
+        string path = CreateFolder(drives[1].Name, "Новая папка");
+        (_, _) = PrintAllSubFolderObjects(drives[1].Name);
+        DeleteFolder(path);
         (_, _) = PrintAllSubFolderObjects(drives[1].Name);
     }
 
@@ -105,7 +107,8 @@ class Program
                 throw new DirectoryNotFoundException("Директория не существует");
             }
         }
-        catch (Exception e) { 
+        catch (Exception e)
+        {
             Console.WriteLine(e.Message);
             throw new DirectoryNotFoundException("Директория не существует");
         }
@@ -116,7 +119,7 @@ class Program
     /// </summary>
     /// <param name="path"></param>
     /// <exception cref="DirectoryNotFoundException"></exception>
-    static void CreateFolder(string path, string name)
+    static string CreateFolder(string path, string name)
     {
         try
         {
@@ -125,8 +128,24 @@ class Program
             {
                 directoryInfo.Create();
                 directoryInfo.CreateSubdirectory("Еще одна новая папка");
-
             }
+            return directoryInfo.FullName;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+            throw new DirectoryNotFoundException("Директория не существует");
+        }
+    }
+
+    static void DeleteFolder(string path)
+    {
+        try
+        {
+            DirectoryInfo directoryInfo = new(path);
+            directoryInfo.Delete(true);
+            Console.WriteLine("===================================================");
+            Console.WriteLine($"Каталог {path} полностью удален.");
         }
         catch (Exception e)
         {
