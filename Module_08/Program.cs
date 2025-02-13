@@ -6,7 +6,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        // DriveInfo[] drives = PrintDriveInfo();
+        DriveInfo[] drives = PrintDriveInfo();
         // (_, _) = PrintAllSubFolderObjects(drives[0].Name);
         // (_, _) = PrintAllSubFolderObjects(drives[1].Name);
         // string path = CreateFolder(drives[1].Name, "Новая папка");
@@ -31,7 +31,7 @@ class Program
     {
         DriveInfo[] drivers = DriveInfo.GetDrives();
 
-        foreach (DriveInfo driver in drivers)
+        foreach (DriveInfo driver in drivers.Where(x => x.DriveType == DriveType.Fixed)) //Добавили фильтрацию через LINQ (Where), которая выводит только физ диски
         {
             Console.WriteLine("===================================================");
             Console.WriteLine($"Название: {driver.Name}");
