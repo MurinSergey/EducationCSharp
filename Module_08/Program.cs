@@ -7,7 +7,10 @@ class Program
     static void Main(string[] args)
     {
         DriveInfo[] drives = PrintDriveInfo();
-        (string[] Foldes, string[] Files) = PrintAllSubFolderObjects(drives[0].Name);
+        (_, _) = PrintAllSubFolderObjects(drives[0].Name);
+        (_, _) = PrintAllSubFolderObjects(drives[1].Name);
+        CreateFolder(drives[1].Name, "Новая папка");
+        (_, _) = PrintAllSubFolderObjects(drives[1].Name);
     }
 
     /// <summary>
@@ -103,6 +106,30 @@ class Program
             }
         }
         catch (Exception e) { 
+            Console.WriteLine(e.Message);
+            throw new DirectoryNotFoundException("Директория не существует");
+        }
+    }
+
+    /// <summary>
+    /// Создание новой папки
+    /// </summary>
+    /// <param name="path"></param>
+    /// <exception cref="DirectoryNotFoundException"></exception>
+    static void CreateFolder(string path, string name)
+    {
+        try
+        {
+            DirectoryInfo directoryInfo = new($"{path}/{name}");
+            if (!directoryInfo.Exists)
+            {
+                directoryInfo.Create();
+                directoryInfo.CreateSubdirectory("Еще одна новая папка");
+
+            }
+        }
+        catch (Exception e)
+        {
             Console.WriteLine(e.Message);
             throw new DirectoryNotFoundException("Директория не существует");
         }
