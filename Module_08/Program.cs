@@ -1,4 +1,6 @@
-﻿namespace Module_08;
+﻿using Module_08.Quest_814;
+
+namespace Module_08;
 
 class Program
 {
@@ -80,12 +82,29 @@ class Program
     /// <exception cref="DirectoryNotFoundException"></exception>
     static int CalcCountAllSubFolderObjects(string path)
     {
-        string dirName = path;
-        if ( Directory.Exists(dirName) ){
-            string[] folders = Directory.GetDirectories(dirName);
-            string[] files = Directory.GetFiles(dirName);
-            return folders.Length + files.Length;
+        //string dirName = path;
+        //if ( Directory.Exists(dirName) ){
+        //    string[] folders = Directory.GetDirectories(dirName);
+        //    string[] files = Directory.GetFiles(dirName);
+        //    return folders.Length + files.Length;
+        //}
+        //throw new DirectoryNotFoundException("Директория не существует");
+
+        try
+        {
+            DirectoryInfo directoryInfo = new DirectoryInfo(path);
+            if (directoryInfo.Exists)
+            {
+                return directoryInfo.GetDirectories().Length + directoryInfo.GetFiles().Length;
+            }
+            else
+            {
+                throw new DirectoryNotFoundException("Директория не существует");
+            }
         }
-        throw new DirectoryNotFoundException("Директория не существует");
+        catch (Exception e) { 
+            Console.WriteLine(e.Message);
+            throw new DirectoryNotFoundException("Директория не существует");
+        }
     }
 }
