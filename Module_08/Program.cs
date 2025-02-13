@@ -6,13 +6,19 @@ class Program
 {
     static void Main(string[] args)
     {
-        DriveInfo[] drives = PrintDriveInfo();
-        (_, _) = PrintAllSubFolderObjects(drives[0].Name);
-        (_, _) = PrintAllSubFolderObjects(drives[1].Name);
-        string path = CreateFolder(drives[1].Name, "Новая папка");
-        (_, _) = PrintAllSubFolderObjects(drives[1].Name);
-        DeleteFolder(path);
-        (_, _) = PrintAllSubFolderObjects(drives[1].Name);
+        // DriveInfo[] drives = PrintDriveInfo();
+        // (_, _) = PrintAllSubFolderObjects(drives[0].Name);
+        // (_, _) = PrintAllSubFolderObjects(drives[1].Name);
+        // string path = CreateFolder(drives[1].Name, "Новая папка");
+        // (_, _) = PrintAllSubFolderObjects(drives[1].Name);
+        // DeleteFolder(path);
+        // (_, _) = PrintAllSubFolderObjects(drives[1].Name);
+        //Код писался на Ubuntu
+        (_, _) = PrintAllSubFolderObjects("/home/murin");
+        string path = CreateFolder("/home/murin", "Новая папка");
+        (_, _) = PrintAllSubFolderObjects("/home/murin");
+        MoveFolderToTrash(path);
+        (_, _) = PrintAllSubFolderObjects("/home/murin");
     }
 
     /// <summary>
@@ -138,6 +144,11 @@ class Program
         }
     }
 
+    /// <summary>
+    /// Метод удаляет каталог и все его содержимое
+    /// </summary>
+    /// <param name="path"></param>
+    /// <exception cref="DirectoryNotFoundException"></exception>
     static void DeleteFolder(string path)
     {
         try
@@ -151,6 +162,24 @@ class Program
         {
             Console.WriteLine(e.Message);
             throw new DirectoryNotFoundException("Директория не существует");
+        }
+    }
+
+    /// <summary>
+    /// Метод перемещает указанную директорию в корзину Ubuntu
+    /// </summary>
+    /// <param name="path"></param>
+    static void MoveFolderToTrash(string path)
+    {
+        string trashUbuntu = "/home/murin/.local/share/Trash/files";
+        try
+        {
+            DirectoryInfo directoryInfo = new(path);
+            directoryInfo.MoveTo($"{trashUbuntu}/{directoryInfo.Name}");
+        }
+        catch(Exception e)
+        {
+            Console.WriteLine(e.Message);
         }
     }
 }
