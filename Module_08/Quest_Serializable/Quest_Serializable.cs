@@ -23,6 +23,7 @@ namespace Module_08.Quest_Serializable
              */
             var option = new JsonSerializerOptions { WriteIndented = true };
             var serializableString = JsonSerializer.Serialize(npc, option);
+            Console.WriteLine(serializableString);
             File.WriteAllText("jsonPerson.json", serializableString);
             Console.WriteLine("Объект успешно сохранен");
 
