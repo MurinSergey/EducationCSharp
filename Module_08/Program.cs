@@ -9,6 +9,8 @@ class Program
     {
         //Quest_Directory.Quest_Directory.Run();
         //Quest_Files.Example.Run();
-        Quest_Files.PrintSource.Run();
+        //Quest_Files.PrintSource.Run();
+        //Quest_BinaryStream.BinaryStream.Run();
+        Quest_841.Quest_841.Run();
     }
 }
