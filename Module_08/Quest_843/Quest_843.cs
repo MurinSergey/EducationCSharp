@@ -14,9 +14,15 @@ namespace Module_08.Quest_843
             //Создаем объект
             Contact contact = new()
             {
-                Name = "User01",
+                Name = "User",
                 Email = "User@vk.com",
                 PhoneNumber = 123456789
+            };
+            Contact contact1 = new()
+            {
+                Name = "User01",
+                Email = "User01@vk.com",
+                PhoneNumber = 987654321
             };
             Console.WriteLine("Объект создан");
 
@@ -25,9 +31,13 @@ namespace Module_08.Quest_843
             //using BinaryWriter writer = new(File.Open("jsonBinary.bin", FileMode.Create, FileAccess.Write));
             //writer.Write(jsonString);
             //Console.WriteLine("Объект сохранен");
-            contact.Save("jsonBinary.bin");
-            Contact newContact = Contact.Load("jsonBinary.bin");
+            contact.SaveBinaryJson("jsonBinary.bin");
+            Contact newContact = Contact.LoadBinaryJson("jsonBinary.bin");
             Console.WriteLine($"{newContact.Name} {newContact.Email} {newContact.PhoneNumber}");
+
+            contact1.SaveBinary("binary.bin");
+            Contact newContact1 = Contact.LoadBinary("binary.bin");
+            Console.WriteLine($"{newContact1.Name} {newContact1.Email} {newContact1.PhoneNumber}");
         }
     }
 }

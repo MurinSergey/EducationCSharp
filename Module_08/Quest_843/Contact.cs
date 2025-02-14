@@ -22,7 +22,7 @@ namespace Module_08.Quest_843
         /// Метод сохраняет текущий класс в JSON в бинарном виде
         /// </summary>
         /// <param name="path"></param>
-        public void Save(string path)
+        public void SaveBinaryJson(string path)
         {
             var jsonString = JsonSerializer.Serialize(this, option);
             using BinaryWriter writer = new(File.Open(path, FileMode.Create, FileAccess.Write));
@@ -36,7 +36,7 @@ namespace Module_08.Quest_843
         /// <returns>
         /// Восстановленый объект
         /// </returns>
-        public static Contact Load(string path)
+        public static Contact LoadBinaryJson(string path)
         {
             try
             {
@@ -58,6 +58,51 @@ namespace Module_08.Quest_843
             }
             catch (Exception e)
             {
+                return new Contact();
+            }
+        }
+
+        /// <summary>
+        /// Сохраняет класс в бинарном формате
+        /// </summary>
+        /// <param name="path"></param>
+        public void SaveBinary(string path)
+        {
+            using BinaryWriter writer = new(File.Open(path, FileMode.Create, FileAccess.Write));
+            writer.Write(Name);
+            writer.Write(PhoneNumber);
+            writer.Write(Email);
+        }
+
+        /// <summary>
+        /// Восстанавливает класс из бинарного файла
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
+        public static Contact LoadBinary(string path)
+        {
+            try
+            {
+                if (File.Exists(path))
+                {
+                    using BinaryReader reader = new(File.Open(path, FileMode.Open, FileAccess.Read));
+                    var res = new Contact()
+                    {
+                        Name = reader.ReadString(),
+                        PhoneNumber = reader.ReadInt64(),
+                        Email = reader.ReadString()
+                    };
+                    return res;
+                }
+                else
+                {
+                    Console.WriteLine("Нет файла");
+                    return new Contact();
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
                 return new Contact();
             }
         }
