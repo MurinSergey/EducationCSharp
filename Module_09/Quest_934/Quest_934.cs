@@ -26,5 +26,8 @@ internal class Quest_934
         Calc calc = Add;
         calc += Sub;
         calc.Invoke(10, 5);
+
+        calc -= Sub;
+        calc.Invoke(20, 43);
     }
 }
