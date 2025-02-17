@@ -30,9 +30,17 @@ internal class Quest_937
 
     internal static void Run()
     {
-        ShowMessageDelegate showMessage = ShowMessage;
-        SumDelegate sum = Sum;
-        CheckLengthDelegate checkLength = CheckLength;
+        //Метод ShowMessage ничего не возвращает, поэтому используем делегат Action
+        //ShowMessageDelegate showMessage = ShowMessage;
+        Action showMessage = ShowMessage;
+
+        //Метод Sum принимает три параметра и один возвращает, поэтому используем делегат Func
+        //SumDelegate sum = Sum;
+        Func<int, int, int, int> sum = Sum;
+
+        //Метод CheckLength возвращает булевое значение, поэтому используем Predicat
+        //CheckLengthDelegate checkLength = CheckLength;
+        Predicate<string> checkLength = CheckLength;
 
         showMessage();
         Console.WriteLine();
@@ -40,8 +48,6 @@ internal class Quest_937
         var resSum = sum(13, 7, 21);
         Console.WriteLine(resSum);
         Console.WriteLine();
-
-
 
         var resCheck = checkLength("Привет");
         Console.WriteLine(resCheck);
