@@ -12,7 +12,11 @@ internal class Quest_9312
     internal static void Run()
     {
         //ShowMessageDelegate showMessageDelegate = ShowMessage;
-        ShowMessageDelegate showMessageDelegate = delegate(string _message)
+        //ShowMessageDelegate showMessageDelegate = delegate(string _message)
+        //{
+        //    Console.WriteLine(_message);
+        //};
+        ShowMessageDelegate showMessageDelegate = (string _message) =>
         {
             Console.WriteLine(_message);
         };
