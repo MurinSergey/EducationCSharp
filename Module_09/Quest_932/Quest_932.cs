@@ -28,5 +28,7 @@ internal class Quest_932
         Calc calc = Subtract;
         var res = calc.Invoke(10, 5);
         Console.WriteLine($"Результат: {res}");
+        res = calc(15, 6);
+        Console.WriteLine($"Результат: {res}");
     }
 }
