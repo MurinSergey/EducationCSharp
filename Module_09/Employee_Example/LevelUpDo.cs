@@ -17,14 +17,24 @@ internal class LevelUpDo
                 new Employee(1.2, 12000) {Name = "Татьяна"}
             ];
 
-        Predicate<Employee> checkLevelUp = (Employee employee) =>
+        //Вместо шаблонного делегата, можно использовать локальную функцию
+        static bool checkLevelUp(Employee employee)
         {
             if (employee.Experience - employee.LastExperience > 1)
             {
                 return true;
             }
             return false;
-        };
+        }
+
+        //Predicate<Employee> checkLevelUp = (Employee employee) =>
+        //{
+        //    if (employee.Experience - employee.LastExperience > 1)
+        //    {
+        //        return true;
+        //    }
+        //    return false;
+        //};
 
         for (int i = 0; i < 10; i++)
         {
