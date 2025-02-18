@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using Module_09.Employee_Example;
+using Module_09.Events_Example01;
 using Module_09.Quest_913;
 using Module_09.Quest_914;
 using Module_09.Quest_922;
@@ -24,4 +25,5 @@ using Module_09.Quest_943;
 //Quest_9313.Run();
 //LevelUpDo.Run();
 //Quest_942.Run();
-Quest_943.Run();
+//Quest_943.Run();
+Main.Run();
