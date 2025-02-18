@@ -1,6 +1,6 @@
 using System;
 
-namespace Module_09.Quets_942;
+namespace Module_09.Quest_943;
 
 /// <summary>
 /// Базовый класс машины

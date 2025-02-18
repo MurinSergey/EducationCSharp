@@ -10,7 +10,8 @@ using Module_09.Quest_9313;
 using Module_09.Quest_932;
 using Module_09.Quest_934;
 using Module_09.Quest_937;
-using Module_09.Quets_942;
+using Module_09.Quest_942;
+using Module_09.Quest_943;
 
 //Quest_913.Run();
 //Quest_914.Run();
@@ -22,4 +23,5 @@ using Module_09.Quets_942;
 //Quest_9312.Run();
 //Quest_9313.Run();
 //LevelUpDo.Run();
-Quest_942.Run();
+//Quest_942.Run();
+Quest_943.Run();
