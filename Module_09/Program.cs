@@ -1,7 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using Module_09.Employee_Example;
-using Module_09.Events_Example01;
+
 using Module_09.Quest_913;
 using Module_09.Quest_914;
 using Module_09.Quest_922;
@@ -13,6 +13,9 @@ using Module_09.Quest_934;
 using Module_09.Quest_937;
 using Module_09.Quest_942;
 using Module_09.Quest_943;
+using Events1 = Module_09.Events_Example01.Main;
+using Events2 = Module_09.Events_Example02.Main;
+
 
 //Quest_913.Run();
 //Quest_914.Run();
@@ -26,4 +29,5 @@ using Module_09.Quest_943;
 //LevelUpDo.Run();
 //Quest_942.Run();
 //Quest_943.Run();
-Main.Run();
+//Events1.Run();
+Events2.Run();
