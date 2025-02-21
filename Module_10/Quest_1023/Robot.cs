@@ -6,14 +6,11 @@ using System.Threading.Tasks;
 
 namespace Module_10.Quest_1023
 {
-    class Main
+    class Robot : IWorker
     {
-        internal static void Run()
+        void IWorker.Build()
         {
-            Worker worker = new();
-            worker.Build();
-            Robot robot = new();
-            ((IWorker)robot).Build();
+            Console.WriteLine("Робот - это тоже рабочий");
         }
     }
 }
