@@ -1,4 +1,5 @@
 ﻿
+using FirstExample101 = Module_10.Examples.Unit101.First.Main;
 using FirstExample102 = Module_10.Examples.Unit102.First.Main;
 using FirstExample103 = Module_10.Examples.Unit103.First.Main;
 using FirstExample104 = Module_10.Examples.Unit104.First.Main;
@@ -8,6 +9,8 @@ using Quest_1023 = Module_10.Quest_1023.Main;
 using Quest_1031 = Module_10.Quest_1031.Main;
 using Quest_1032 = Module_10.Quest_1032.Main;
 using Quest_1033 = Module_10.Quest_1033.Main;
+
+FirstExample101.Run();
 
 //FirstExample102.Run();
 //Quest_1022.Run();
@@ -19,4 +22,4 @@ using Quest_1033 = Module_10.Quest_1033.Main;
 //Quest_1033.Run();
 
 //FirstExample104.Run();
-SecondExample104.Run();
+//SecondExample104.Run();
